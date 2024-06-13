@@ -38,13 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
               child: FitPageShimmer(),
             );
           } else if (state is FitPageLoaded) {
-            return ListView.builder(
-              itemCount: state.fitPageData.length,
-              itemBuilder: (context, index) {
-                return StockTile(
-                  stockData: state.fitPageData[index],
-                );
+            return RefreshIndicator(
+              onRefresh: () async {
+                _fitPageCubit.fetchData();
               },
+              child: ListView.builder(
+                itemCount: state.fitPageData.length,
+                itemBuilder: (context, index) {
+                  return StockTile(
+                    stockData: state.fitPageData[index],
+                  );
+                },
+              ),
             );
           } else {
             return const Center(
