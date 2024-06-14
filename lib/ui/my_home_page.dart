@@ -1,5 +1,4 @@
 import 'package:fit_page/data/fit_page_cubit.dart';
-import 'package:fit_page/data/fit_page_stocks_model.dart';
 import 'package:fit_page/helper/widgets/fit_page_shimmer.dart';
 import 'package:fit_page/ui/stock_tile.dart';
 import 'package:flutter/material.dart';
