@@ -1,13 +1,25 @@
 part of 'fit_page_cubit.dart';
 
-abstract class FitPageState {}
+@immutable
+abstract class EnterSliceState {
+  final String location;
+  final String? error;
+  const EnterSliceState(this.location, this.error);
+}
 
-class FitPageInitial extends FitPageState {}
+class EnterSliceInitial extends EnterSliceState {
+  const EnterSliceInitial() : super("Unknown", null);
+}
 
-class FitPageLoading extends FitPageState {}
+class EnterSliceLoading extends EnterSliceState {
+  const EnterSliceLoading() : super("Loading", null);
+}
 
-class FitPageLoaded extends FitPageState {
-  final List<FitPageStocksModel> fitPageData;
+class EnterSliceUpdated extends EnterSliceState {
+  // final EnterSliceGeoLocationModel geoLocationData;
+  const EnterSliceUpdated(String location) : super(location, null);
+}
 
-  FitPageLoaded({required this.fitPageData});
+class EnterSliceError extends EnterSliceState {
+  const EnterSliceError(String error) : super("Unknown", error);
 }

@@ -1,6 +1,6 @@
 class AppStrings {
   // General
-  static const appTitle = 'Fit Page';
+  static const appTitle = 'EnterSlice';
   static const welcomeMessage = 'Welcome to the app!';
 
   // Error Messages

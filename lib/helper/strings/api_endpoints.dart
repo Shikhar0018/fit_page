@@ -1,5 +1,5 @@
 const String baseUrl = 'http://coding-assignment.bombayrunning.com';
 
-class FitPageEndPoints {
+class EnterSliceEndPoints {
   static const String fitPage = '/data.json';
 }
