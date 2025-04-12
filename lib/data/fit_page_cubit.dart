@@ -26,7 +26,14 @@ class EnterSliceCubit extends Cubit<EnterSliceState> {
         emit(const EnterSliceUpdated('Location permissions granted.'));
         await _initializeLocation();
       } else {
-        emit(const EnterSliceError('Location permissions are not granted.'));
+        /// If permissions are not granted, show last location if available in the database
+        final lastLocation = await _locationService.getLastLocation();
+        if (lastLocation != null) {
+          emit(EnterSliceUpdated(
+              "Last location: ${lastLocation['latitude']}, ${lastLocation['longitude']}"));
+        } else {
+          emit(const EnterSliceError('No location data available.'));
+        }
       }
 
       if (_isPermissionGranted) {
