@@ -1,8 +1,11 @@
+import 'package:fit_page/helper/permission_helper.dart';
 import 'package:fit_page/helper/strings/app_strings.dart';
 import 'package:fit_page/ui/my_home_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
