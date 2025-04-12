@@ -12,8 +12,6 @@ class LocationViewScreen extends StatefulWidget {
 }
 
 class _LocationViewScreenState extends State<LocationViewScreen> {
-  final DatabaseHelper _dbHelper = DatabaseHelper();
-  static const platform = MethodChannel('location_channel');
   late final EnterSliceCubit _enterSliceCubit;
 
   @override
